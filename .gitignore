@@ -18,7 +18,10 @@ Cargo.lock
 #Cargo.lock
 
 # neon
-.bin-package/
+bin-package/
+build/
+publish
+
 
 # Logs
 logs
