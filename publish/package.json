@@ -2,13 +2,13 @@
   "name": "@jinsoku/web-api",
   "version": "1.0.0",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
     "compile": "cargo-cp-artifact -nc ./bin-package/index.node -- cargo build --release --message-format=json-render-diagnostics",
     "test": "cargo test",
     "build": "tsc",
     "run": "node dist/index.js",
-    "clean": "cargo clean && rm -rf dist && rm -rf bin-package && rm -rf build && rm -rf publish"
+    "clean": "cargo clean && rm -rf dist && rm -rf bin-package && rm -rf build && rm -rf publish",
+    "install": "node-pre-gyp install"
   },
   "repository": "git@github.com:jinsoku/web-api",
   "author": "Tejas Agarwal <tejasagarwalbly@gmail.com>",

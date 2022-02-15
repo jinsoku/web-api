@@ -18,6 +18,7 @@
               clippy
               rls
               nodejs
+              yarn
               openssl
               pkg-config
             ];
