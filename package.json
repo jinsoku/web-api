@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
-    "neon-build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
-    "neon-build-debug": "npm run build --",
-    "neon-build-release": "npm run build -- --release",
+    "compile": "cargo-cp-artifact -nc ./bin-package/index.node -- cargo build --release --message-format=json-render-diagnostics",
     "test": "cargo test",
     "build": "tsc",
     "run": "node dist/index.js"
