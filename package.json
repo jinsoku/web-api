@@ -1,0 +1,20 @@
+{
+  "name": "@jinsoku/web-api",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "neon-build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
+    "neon-build-debug": "npm run build --",
+    "neon-build-release": "npm run build -- --release",
+    "test": "cargo test",
+    "build": "tsc",
+    "run": "node dist/index.js"
+  },
+  "devDependencies": {
+    "cargo-cp-artifact": "^0.1"
+  },
+  "repository": "git@github.com:jinsoku/web-api",
+  "author": "Tejas Agarwal <tejasagarwalbly@gmail.com>",
+  "license": "MIT",
+  "private": false
+}

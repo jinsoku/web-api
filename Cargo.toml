@@ -1,0 +1,22 @@
+[package]
+name = "web-api"
+version = "0.1.0"
+license = "MIT"
+authors = ["Tejas Agarwal <tejasagarwalbly@gmail.com>"]
+edition = "2018"
+exclude = ["index.node"]
+
+[lib]
+crate-type = ["cdylib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+once_cell = "1"
+reqwest = { version = "0.11", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
+
+[dependencies.neon]
+version = "0.10.0-alpha.3"
+default-features = false
+features = ["napi-6", "promise-api", "channel-api"]
