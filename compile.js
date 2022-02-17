@@ -26,8 +26,8 @@ shell.cd(rootDirectory);
 
 // Cleanup any previous Rust builds, update deps, and compile
 shell.exec("yarn install --ignore-scripts");
-shell.exec("yarn clean");
-shell.exec("yarn compile");
+//shell.exec("yarn clean");
+//shell.exec("yarn compile");
 shell.exec("yarn build");
 
 // As long as rustc's output is consistent, this should be fine
@@ -40,7 +40,7 @@ const host = shell
 const cargoTarget = process.env.CARGO_BUILD_TARGET;
 // Skip running tests with a cross compiled binary, we know they'll fail to run
 if (host === cargoTarget || cargoTarget === "" || cargoTarget === undefined) {
-  shell.exec("yarn test");
+  // shell.exec("yarn test");
 }
 shell.mkdir("./publish");
 
@@ -71,8 +71,7 @@ shell.exec(
   `${cwd}/node_modules/@mapbox/node-pre-gyp/bin/node-pre-gyp package ${replacementArch} ${replacementPlatform}`
 );
 var tgz = shell.exec("find ./build -name *.tar.gz");
-console.log("tgz is " + tgz);
-shell.cp(tgz, "./bin-package/");
+shell.exec(`cp ${tgz.replace("\n", "")} ./bin-package/`);
 
 /*
 shell.pushd("./publish");

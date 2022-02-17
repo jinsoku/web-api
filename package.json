@@ -4,7 +4,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "compile": "cargo-cp-artifact -nc ./bin-package/index.node -- cargo build --release --message-format=json-render-diagnostics",
+    "compile": "cargo-cp-artifact -nc ./bin-package/index.node -- cargo build --message-format=json-render-diagnostics",
     "test": "cargo test",
     "build": "tsc",
     "run": "node dist/index.js",
